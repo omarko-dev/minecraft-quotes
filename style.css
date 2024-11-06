@@ -1,0 +1,128 @@
+@font-face {
+    font-family: 'MinecraftBold';
+    src: url('MinecraftBold-nMK1.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'MinecraftRegular';
+    src: url('MinecraftRegular-Bmg3.otf') format('opentype');
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('background-image.jpeg') no-repeat center center fixed; /* Add background image */
+    background-size: cover; /* Ensure the background image covers the entire page */
+    font-family: 'MinecraftRegular', sans-serif;
+    margin: 0;
+}
+
+.title {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: white;
+    background-color: #31b853; /* Minecraft green color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'MinecraftBold', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add shadow to the title */
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+#instruction {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#steve {
+    width: 550px; /* Increase size of Steve */
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bubble {
+    position: absolute;
+    top: 10%;
+    right: 10%; /* Move bubble further to the right */
+    width: 450px; /* Decrease size of bubble */
+    padding: 30px;
+    background: white;
+    border-radius: 50px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s;
+    display: none;
+}
+
+.small-bubble {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.small-bubble:nth-child(1) {
+    top: 20%;
+    right: 15%; /* Adjust position */
+}
+
+.small-bubble:nth-child(2) {
+    top: 30%;
+    right: 20%; /* Adjust position */
+}
+
+.small-bubble:nth-child(3) {
+    top: 40%;
+    right: 25%; /* Adjust position */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#quote {
+    margin: 0;
+    font-family: 'MinecraftRegular', sans-serif;
+    font-size: 1.5em;
+}
+
+.music-toggle {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.music-toggle img {
+    width: 40px;
+    height: 40px;
+    filter: invert(100%); /* Make the icon white */
+}
