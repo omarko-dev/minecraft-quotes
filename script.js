@@ -13,31 +13,39 @@ const quotes = [
     "Death is only temporary, you can always re-spawn and find your Items.",
     "Some things can only be found in the Nether.",
     "A base is just blocks until it's filled with memories and purpose.",
-    "Your pickaxe may break, but you can always craft another one."
+    "Your pickaxe may break, but you can always craft another one.",
+    "Even the smallest torch can light the darkest cave.",
+    "You can't always control the creeper, but you can control the blast.",
+    "Every biome has its beauty, even if it’s hidden under layers of snow or sand.",
+    "You can’t change the seed of your world, but you can make it your own paradise."
 ];
 
 let usedQuotes = [];
 let isMusicPlaying = false;
 const audio = new Audio('radio-sound.mp3');
-audio.volume = 0.5; // Lower the volume of the radio sound effect
+audio.volume = 0.5;
 const backgroundMusic = new Audio('background-music.mp3');
 backgroundMusic.loop = true;
-backgroundMusic.pause(); // Ensure the background music is paused by default
-document.getElementById('music-icon').src = 'no-music-icon.png'; // Set the default icon to muted
+backgroundMusic.pause();
+document.getElementById('music-icon').src = 'no-music-icon.png';
 
-document.getElementById('steve').addEventListener('click', () => {
-    audio.play();
+const getRandomQuote = () => {
+    if (usedQuotes.length === quotes.length) {
+        usedQuotes = [];
+    }
 
     let quote;
     do {
         quote = quotes[Math.floor(Math.random() * quotes.length)];
-    } while (usedQuotes.includes(quote) && usedQuotes.length < quotes.length);
-
-    if (usedQuotes.length >= quotes.length) {
-        usedQuotes = [];
-    }
+    } while (usedQuotes.includes(quote));
 
     usedQuotes.push(quote);
+    return quote;
+};
+
+document.getElementById('steve').addEventListener('click', () => {
+    audio.play();
+    const quote = getRandomQuote();
     document.getElementById('quote').innerText = quote;
     document.querySelector('.bubble').style.display = 'block';
     document.getElementById('instruction').style.display = 'none';
