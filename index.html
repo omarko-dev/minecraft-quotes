@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minecraft Quotes</title>
+    <title>Wise Steve</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 class="title">MINECRAFT QUOTES</h1>
     <div class="container">
+        <img id="logo" src="logo.png" alt="Wise Steve Logo" class="logo">
         <p id="instruction">Click on Steve for a quote</p>
-        <img id="steve" src="ranger.png" alt="Steve">
-        <div class="bubble">
+        <img id="steve" src="ranger.png" alt="Steve" aria-label="Click on Steve for a quote">
+        <div class="bubble" aria-live="polite">
             <p id="quote"></p>
         </div>
-        <button id="music-toggle" class="music-toggle">
+        <button id="music-toggle" class="music-toggle" aria-label="Toggle Music">
             <img id="music-icon" src="music-icon.png" alt="Toggle Music">
         </button>
     </div>
