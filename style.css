@@ -9,11 +9,11 @@
 }
 
 :root {
-    --logo-width: 500px; /* Adjusted size of the logo */
+    --logo-width: 600px; /* Increase the size of the logo */
     --steve-width: 550px;
     --bubble-width: 450px;
     --bubble-padding: 30px;
-    --bubble-top: 25%; /* Move the bubble slightly up */
+    --bubble-top: 20%; /* Move the bubble up more */
     --bubble-right: 10%;
     --music-toggle-size: 60px;
     --music-icon-size: 40px;
